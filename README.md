@@ -2,21 +2,21 @@
 Mô Tả Dự Án: Thiết Kế Cơ Sở Dữ Liệu Quản Lý Pet Spa
 1. Mục Tiêu Dự Án
 Xây dựng một hệ thống cơ sở dữ liệu để quản lý hoạt động của một Pet Spa, bao gồm:
-•	Quản lý thông tin khách hàng và thú cưng.
-•	Quản lý lịch hẹn và dịch vụ.
-•	Quản lý thanh toán.
-•	Quản lý thông tin và lịch làm việc của nhân viên.
-•	Quản lý vật tư và nhà cung cấp.
-•	Lưu trữ đánh giá của khách hàng về dịch vụ.
+  •	Quản lý thông tin khách hàng và thú cưng.
+  •	Quản lý lịch hẹn và dịch vụ.
+  •	Quản lý thanh toán.
+  •	Quản lý thông tin và lịch làm việc của nhân viên.
+  •	Quản lý vật tư và nhà cung cấp.
+  •	Lưu trữ đánh giá của khách hàng về dịch vụ.
 Làm quen với một quy trình thiết kế database, áp dụng được các kiến thức đã học vào dự án.
-2. Các Bảng Chính và Mối Quan Hệ
+3. Các Bảng Chính và Mối Quan Hệ
 2.1. Bảng KhachHang
-•	Lưu trữ thông tin khách hàng.
-•	Các trường: IdKhachHang, HoTen,NgaySinh,GioiTinh,DiaChi,SDT,Email.
-•	Mối quan hệ:
-o	1:N với ThuCung  Một khách hàng có thể có nhiều thú cưng .
-o	1:N với LichHen  Một khách hàng có thể đặt nhiều lịch hẹn.
-o	1:N với DanhGia  Một khách hàng có thể để lại nhiều đánh giá.
+  •	Lưu trữ thông tin khách hàng.
+  •	Các trường: IdKhachHang, HoTen,NgaySinh,GioiTinh,DiaChi,SDT,Email.
+  •	Mối quan hệ:
+    o	1:N với ThuCung  Một khách hàng có thể có nhiều thú cưng .
+    o	1:N với LichHen  Một khách hàng có thể đặt nhiều lịch hẹn.
+    o	1:N với DanhGia  Một khách hàng có thể để lại nhiều đánh giá.
 2.2. Bảng ThuCung
 •	Lưu trữ thông tin thú cưng của khách hàng.
 •	Các trường: IdThuCung, IdKhachHang, TenThuCung,GiongLoai,Tuoi,GioiTinh.
@@ -69,5 +69,5 @@ o	N:N với NhaCungCap thông qua bảng NhaCungCap_VatTu  Một nhà cung c�
 •	Mối Quan hệ:
 o	N:N với VatTu thông qua bảng NhaCungCap_VatTu.
 
-3. Ảnh Diagram và mối quan hệ giữa các bảng
+4. Ảnh Diagram và mối quan hệ giữa các bảng
 ![Screenshot (1627)](https://github.com/user-attachments/assets/fc16d361-c1a0-41ba-ac38-0f4e301c27f7)
