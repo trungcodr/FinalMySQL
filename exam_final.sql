@@ -55,16 +55,6 @@ create table LichHen(
     foreign key (IdDichVu) references DichVu(IdDichVu)
 );
 
--- create table HoaDon(
--- 	IdHoaDon int primary key auto_increment,
---     IdLichHen int,
---     TongTien decimal(10,2) not null check (TongTien > 0),
---     ThoiGianThanhToan date,
---     PhuongThucThanhToan enum('Tien mat', 'The ngan hang', 'Chuyen Khoan'),
---     TrangThaiHoaDon enum('Đã thanh toán','Chưa thanh toán'),
---     foreign key (IdLichHen) references LichHen(IdLichHen)
--- );
-
 create table ThanhToan(
 	IdThanhToan int primary key auto_increment,
     IdKhachHang int not null,
