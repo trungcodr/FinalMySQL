@@ -35,7 +35,7 @@ begin
 	declare ketQua int;
     
 	select count(*) into ketQua from LichHen
-    where IdKhachHang = p_IdKhachHang;
+    where IdKhachHang = f_IdKhachHang;
     
     if ketQua = 0 then
 		return 'Khong co lich hen nao';
