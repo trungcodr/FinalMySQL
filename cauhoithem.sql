@@ -24,7 +24,7 @@ join LichHen lh
 on kh.IdKhachHang = lh.IdKhachHang
 group by kh.HoTen;
 
-/* function de dem so lich hen cua khach hang*/
+/* function de lay so luong lich hen cua khach hang*/
 delimiter //
 create function LayLichHenKh(
 	 f_IdKhachHang int
