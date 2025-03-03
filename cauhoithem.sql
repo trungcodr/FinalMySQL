@@ -63,17 +63,26 @@ create procedure LayThongTinNCC(
  in p_IdNhaCungCap int
 )
 begin 
-	select ncc.IdNhaCungCap, ncc.TenNhaCungCap, vt.IdVatTu, vt.TenVatTu, vt.SoLuong
-    from NhaCungCap ncc
-    join NhaCungCap_VatTu nccvt on ncc.IdNhaCungCap = nccvt.IdNhaCungCap
-    join VatTu vt on nccvt.IdVatTu = vt.IdVatTu
-    where ncc.IdNhaCungCap = p_IdNhaCungCap;
+	declare checkId int;
+    select count(*) into checkId
+    from NhaCungCap
+    where IdNhacungCap = p_IdNhaCungCap;
+    if checkId = 0 then
+		select 'Id khong hop le!' as 'Thong bao';
+	else
+    
+		select ncc.IdNhaCungCap, ncc.TenNhaCungCap, vt.IdVatTu, vt.TenVatTu, vt.SoLuong
+		from NhaCungCap ncc
+		join NhaCungCap_VatTu nccvt on ncc.IdNhaCungCap = nccvt.IdNhaCungCap
+		join VatTu vt on nccvt.IdVatTu = vt.IdVatTu
+		where ncc.IdNhaCungCap = p_IdNhaCungCap;
+    end if;
     
 end //
 delimiter ;
 
 call LayThongTinNCC(2);
-
+call LayThongTinNCC(12);
 
 -- Lay ra nhan vien co nhieu lich lam viec nhat
 create view View_NhanVien_LichLamViec as
