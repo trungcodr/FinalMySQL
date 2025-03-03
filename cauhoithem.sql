@@ -33,7 +33,16 @@ returns int
 deterministic
 begin
 	declare ketQua int;
+    	declare checkId int;
+
+	 select count(*) into checkId from KhachHang
+    where IdKhachHang = f_IdKhachHang;
     
+    if checkId = 0 then
+		return 'Id khach hang khong hop le';
+	end if;
+    return checkId;
+
 	select count(*) into ketQua from LichHen
     where IdKhachHang = f_IdKhachHang;
     
